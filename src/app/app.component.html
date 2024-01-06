@@ -1,0 +1,86 @@
+<div
+  class="table-responsive"
+>
+  <table
+    class="table table-primary"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{category.id}}</td>
+        <td>{{category.name}}</td>
+      </tr>
+      <tr *ngIf="categories.length==0">
+        <td colspan="2">Kategori Bulunamadı</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div
+  class="table-responsive"
+>
+  <table
+    class="table table-primary"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Category Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+      </tr>
+      <tr *ngIf="products.length==0">
+        <td colspan="4">Ürün Bulunamadı</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div
+  class="table-responsive"
+>
+  <table
+    class="table table-primary"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Category Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category Name</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Rate Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let view of getProductWithRateList()">
+        <td>{{view.id}}</td>
+        <td>{{view.categoryId}}</td>
+        <td>{{view.categoryName}}</td>
+        <td>{{view.name}}</td>
+        <td>{{view.price}}</td>
+        <td>{{view.rate}}</td>
+        <td>{{view.rateCount}}</td>
+
+      </tr>
+      <tr *ngIf="getProductWithRateList.length">
+        <td colspan="3">Ürün Bulunamadı</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
